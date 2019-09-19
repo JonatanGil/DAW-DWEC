@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <script>
+        var mayor = Number.MIN_VALUE;
+        var ejc1 = prompt("Indica cuantos elementos quieres en el array:")
+        console.log(ejc1);        
+        var array = new Array(ejc1);
+
+
+        for(var i = 0;ejc1>i;){
+            var valor = prompt("Indica el valor del array en la posición:"+i);
+            if(!isNaN(valor)){
+                i++
+            array[i] = valor;
+            if(valor>mayor){mayor=valor}
+            }else{
+                alert("Indica un numero porfavor")
+            }
+        }
+        console.log(array);
+        document.write("El numero mayor es: "+mayor);
+        </script>
+  </head>
+  <body>
+
+  </body>
+</html>
+
+
+
+
