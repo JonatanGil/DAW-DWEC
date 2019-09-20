@@ -1,0 +1,118 @@
+<html>
+        <head>
+          <title></title>
+          <meta charset="utf-8">
+              <script>
+                  
+                    var siguiente = true;
+
+                    var dni = prompt("Indica dni valido");
+                    dniverificarDni(dni);
+
+                    var telefono = prompt("Indica un telefono");
+                    telefonoCorrecto(telefono);
+
+                    var ip = prompt("Indica una ip valida");
+                    ipValidar(ip);
+
+                    var url = prompt("Indica url");
+                    URLverificada(url);
+
+                    var correo = prompt("Indica correo valido");
+                    correoVerificado(hotmail);
+
+
+                  function dniverificarDni(dni){
+
+                    var numero; 
+                    var letr;
+                    var letra;
+                    var expresion_regular_dni;
+
+                    /*cosa copiada de ethernet*/
+                    expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
+
+                    /*si no cumple 8 digitos y una letra todo junto error*/
+                    if(expresion_regular_dni.test (dni) == true){
+                        /*Obtienes los numeros menos el ultimo que es la letra*/
+                        numero = dni.substr(0,dni.length-1);
+
+                        /*Obtienes la letra el ultimo digito*/
+                        letr = dni.substr(dni.length-1,1);
+
+                        /*divides el dni por 23 para saber que letra toca*/
+                        numero = numero % 23;
+
+                        letra='TRWAGMYFPDXBNJZSQVHLCKET';
+
+                        /*obtienes la letra para validar con el dni enconcreto*/
+                        letra=letra.substring(numero,numero+1);
+
+                        /*pasamos la letra a uper por si acaso lo a puesto en minuscula*/
+                        if (letra!=letr.toUpperCase()) {
+                          alert('Dni erroneo, la letra del NIF no se corresponde');
+                        }else{
+                          alert('Dni correcto');
+                        }
+
+                    }else{
+                    alert('Dni erroneo, formato no válido');
+                    }                
+                  }
+                
+                  function telefonoCorrecto(telefono){
+
+                    if(telefono.length>8){
+                        alert("Telefono correcto");
+                    }else{
+                        alert("Telefono incorrecto");
+                    }
+
+                  }
+
+                  function ipValidar(ip){
+
+                    if(ip.length<16 && ip.length>6){
+
+                      var arrayNumeros = ip.split(".");
+                
+                    if(arrayNumeros.length!=4){
+                      alert("IP incorrecta2");
+                    }else{
+                       for(var i = 0; arrayNumeros.length>i;i++){
+
+                       console.log(arrayNumeros[i]);
+
+                       if(arrayNumeros[i]<0 && arrayNumeros[i]>256){alert("IP incorrecta");break;}
+                      }
+                    }
+                    }else{alert("Ip incorrecta");}
+                  }
+
+                  function correoVerificado(correo){
+                      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(correo)){
+                        /*alert("La dirección de email " + correo + " es correcta.");*/
+                      } else {
+                        alert("La dirección de email es incorrecta.");
+                      }
+                    }
+
+                  function URLverificada(URL){
+                  
+                    if(/^(http|https)\:\/\/[a-z0-9\.-]+\.[a-z]{2,4}/gi.test(URL)){
+                      /*es correcto*/
+                      alert("Es correcto");
+                    }else{
+                      alert("La dirreción: " + URL + " Es Incorrecta");
+                    }
+
+                  }
+
+
+                  
+              </script>
+        </head>
+        <body>
+      
+        </body>
+      </html>
