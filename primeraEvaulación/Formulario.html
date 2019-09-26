@@ -1,0 +1,164 @@
+<html>
+        <head>
+          <title></title>
+          <meta charset="utf-8">
+              <script>
+                  
+
+
+                var errores = new String();
+/*
+                    var dni = prompt("Indica dni valido");
+                    dniverificarDni(dni);
+
+                    var telefono = prompt("Indica un telefono");
+                    telefonoCorrecto(telefono);
+
+                    var ip = prompt("Indica una ip valida");
+                    ipValidar(ip);
+
+
+                    var correo = prompt("Indica correo valido");
+                    correoVerificado(hotmail);
+
+*/
+
+                  function nombreCorrecto(nombre){
+                    if(ctype_alpha (nombre)){
+
+                    }
+                  }
+
+                  function dniverificarDni(dni){
+
+                    var numero; 
+                    var letr;
+                    var letra;
+                    var expresion_regular_dni;
+
+                    /*cosa copiada de ethernet*/
+                    expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
+
+                    /*si no cumple 8 digitos y una letra todo junto error*/
+                    if(expresion_regular_dni.test (dni) == true){
+                        /*Obtienes los numeros menos el ultimo que es la letra*/
+                        numero = dni.substr(0,dni.length-1);
+
+                        /*Obtienes la letra el ultimo digito*/
+                        letr = dni.substr(dni.length-1,1);
+
+                        /*divides el dni por 23 para saber que letra toca*/
+                        numero = numero % 23;
+
+                        letra='TRWAGMYFPDXBNJZSQVHLCKET';
+
+                        /*obtienes la letra para validar con el dni enconcreto*/
+                        letra=letra.substring(numero,numero+1);
+
+                        /*pasamos la letra a uper por si acaso lo a puesto en minuscula*/
+                        if (letra!=letr.toUpperCase()) {
+                          alert('Dni erroneo, la letra del NIF no se corresponde');
+                        }else{
+                          alert('Dni correcto');
+                        }
+
+                    }else{
+                    alert('Dni erroneo, formato no válido');
+                    }                
+                  }
+                
+                  function ipValidar(ip){
+
+                    if(ip.length<16 && ip.length>6){
+
+                      var arrayNumeros = ip.split(".");
+                
+                    if(arrayNumeros.length!=4){
+                      alert("IP incorrecta2");
+                    }else{
+                       for(var i = 0; arrayNumeros.length>i;i++){
+
+                       console.log(arrayNumeros[i]);
+
+                       if(arrayNumeros[i]<0 && arrayNumeros[i]>256){alert("IP incorrecta");break;}
+                      }
+                    }
+                    }else{alert("Ip incorrecta");}
+                  }
+
+                  function correoVerificado(correo){
+                      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(correo)){
+                        /*alert("La dirección de email " + correo + " es correcta.");*/
+                      } else {
+                        alert("La dirección de email es incorrecta.");
+                      }
+                    }
+
+              </script>
+              <style>
+              
+                
+                p{
+
+                  text-align: right;
+                }
+
+                div{
+                  background-color: #979797;
+                  width: 100%;
+                }
+                div div{
+                  padding: 10px;
+                  width: 20%;
+                  float: left;
+                }
+               
+
+                .segundodiv{
+                  width: 40%;
+                }
+                .contenedor{
+                  margin: 100px;
+                }
+                input{
+                  display: block;
+                  margin: 8.1px;
+                }
+                h2{
+                  text-align: left;
+                  margin-left: 28px;
+                  color:white;
+                  font-size: 15px;
+                }
+              </style>
+        </head>
+        <body>
+
+          <div class="contenedor">
+            <div>
+                <p>Nombre:</p>
+                <p>Apellidos:</p> 
+                <p>e-mail:</p>
+                <p>DNI:</p> 
+                <p>Password:</p> 
+                <p>Repetir password:</p> 
+                <p>IP Equipo:</p>
+            </div>
+
+            <div class="segundodiv">
+
+              <h2>Formulario Total</h2>
+              <input type="text">
+              <input type="text">
+              <input type="text">
+              <input type="text">
+              <input type="text">
+              <input type="text">
+              <input type="text">
+            </div>
+
+
+          </div>
+          
+        </body>
+      </html>
