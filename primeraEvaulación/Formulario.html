@@ -3,7 +3,7 @@
           <title></title>
           <meta charset="utf-8">
               <script>
-                  
+
 
 
                 var errores = new String();
@@ -24,14 +24,16 @@
 */
 
                   function nombreCorrecto(nombre){
+                    nombreOk = document.valor.String.value;
                     if(ctype_alpha (nombre)){
 
                     }
+                    alert(nombreOk);
                   }
 
                   function dniverificarDni(dni){
 
-                    var numero; 
+                    var numero;
                     var letr;
                     var letra;
                     var expresion_regular_dni;
@@ -64,15 +66,15 @@
 
                     }else{
                     alert('Dni erroneo, formato no válido');
-                    }                
+                    }
                   }
-                
+
                   function ipValidar(ip){
 
                     if(ip.length<16 && ip.length>6){
 
                       var arrayNumeros = ip.split(".");
-                
+
                     if(arrayNumeros.length!=4){
                       alert("IP incorrecta2");
                     }else{
@@ -95,11 +97,11 @@
                     }
 
               </script>
-              <style>
-              
-                
-                p{
 
+              <style>
+
+
+                p{
                   text-align: right;
                 }
 
@@ -108,25 +110,36 @@
                   width: 100%;
                 }
                 div div{
-                  padding: 10px;
-                  width: 20%;
+                  padding: 20px;
+                  padding-right: 0px;
+                  width: 25%;
                   float: left;
+                  height: 260px;
                 }
-               
+
 
                 .segundodiv{
-                  width: 40%;
+                  width: 222px;
+                  height: 260px;
+
                 }
-                .contenedor{
-                  margin: 100px;
-                }
-                input{
+
+                .segundodiv input {
+                  border: 1px solid black;
+                  margin-top: 15px;
                   display: block;
-                  margin: 8.1px;
+                  width: 100%;
+                }
+
+                .contenedor{
+                  float: left;
+                  margin:100px;
+                  width: 60%;
                 }
                 h2{
-                  text-align: left;
-                  margin-left: 28px;
+                  margin-top: 20px;
+                  margin-bottom: 0px;
+                  text-align: center;
                   color:white;
                   font-size: 15px;
                 }
@@ -135,30 +148,32 @@
         <body>
 
           <div class="contenedor">
+            <h2>Formulario Total</h2>
             <div>
                 <p>Nombre:</p>
-                <p>Apellidos:</p> 
+                <p>Apellidos:</p>
                 <p>e-mail:</p>
-                <p>DNI:</p> 
-                <p>Password:</p> 
-                <p>Repetir password:</p> 
+                <p>DNI:</p>
+                <p>Password:</p>
+                <p>Repetir password:</p>
                 <p>IP Equipo:</p>
             </div>
 
             <div class="segundodiv">
+<form>
 
-              <h2>Formulario Total</h2>
-              <input type="text">
-              <input type="text">
-              <input type="text">
-              <input type="text">
-              <input type="text">
-              <input type="text">
-              <input type="text">
+                <input  name="valor" type="text" onclick="this.focus()" onblur="nombreCorrecto()"  >
+                <input onblur="this" type="text">
+                <input onblur="this" type="text">
+                <input onblur="this" type="text">
+                <input onblur="this" type="text">
+                <input onblur="this" type="text">
+                <input onblur="this" type="text">
+</form>
             </div>
 
 
           </div>
-          
+
         </body>
       </html>
