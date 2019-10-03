@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+</head>
+
+<body>
+
+  <p>Before the script...</p>
+
+<br><br>
+
+
+<div id="mono">
+  papito
+  <button onclick="add();"></button>
+  
+  <div>hijito</div>
+
+</div>
+
+  <p>...After the script.</p>
+  <script>
+
+      var arrayDiv = document.getElementsByTagName("div");
+      
+      for (let index = 0; index < arrayDiv.length; index++) {
+        
+        alert(arrayDiv[index].innerText);
+        
+      }
+    
+    
+    </script>
+</body>
+
+</html>
