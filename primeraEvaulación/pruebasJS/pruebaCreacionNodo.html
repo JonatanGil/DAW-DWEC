@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        article{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        div{
+            border: 1px dashed red;
+            overflow: auto;
+            width: 45%;
+        }
+
+        .boton{
+            margin:10px;
+            border: 20px solid red;
+            width: 100%;
+        
+        }
+
+    </style>
+</head>
+<body>
+    <article>
+     
+    <div id="mono">
+        
+<p>adsdadsa</p>
+    </div>
+
+
+    <div id="mono2">
+<p>sdadsaasd</p>
+
+    </div>
+    <button class="boton" onclick="botoncito()">boton</button>
+
+</article>
+
+
+    <script>
+
+        bucle=0;
+
+    function botoncito(){
+
+        if(bucle%2==0){
+            parrafo = "mono";
+        }else{
+            parrafo = "mono2";
+        }
+
+        var parrafo;
+
+        var nodoPadre = document.getElementById(parrafo);
+        var parrafo = document.createElement("p");
+        var texto = document.createTextNode("parrafoInsertado con boton");
+    
+        parrafo.append(texto.nodeVa);
+        nodoPadre.append(parrafo);
+        bucle++;
+    }
+    
+
+
+    </script>
+
+</body>
+</html>
