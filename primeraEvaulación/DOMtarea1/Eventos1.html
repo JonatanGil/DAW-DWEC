@@ -20,6 +20,8 @@
        align-items: center;
        margin: 4px;
        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+       transition: 1s;
+       
    }
 
    footer{
@@ -30,10 +32,8 @@
    }
    
    .cuadrado1{
-       background-color: red;
+    background-color: red;
 
-    -webkit-transition: all .5s;
-    transition: 2ms;
 
    }
     
@@ -53,17 +53,27 @@
        margin: 18px;
    }
 
-   .transicionCuadrado{
-       background-color:yellow;
-      /* -webkit-border-radius: 200px 200px 200px 200px;*/
-
-    margin-left:-385px;
-    -webkit-transition: 1s;
+   .cambiarCuadrado{
+    border-radius: 100%;
+    box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.75);
     transition: 1s;
 
+/*
+    margin-left:-385px;
+    -webkit-transition: 1s;
+    transition: 1s;*/
 
    }
 
+   .transcionCirculo{
+    border-radius: 50%;
+    transition: 1s;
+   }
+
+   .eliminar{
+       width: 0px;
+       transition: 1s;
+   }
 
    </style>
 </head>
@@ -83,19 +93,17 @@
             //obtengo el padre
             var padre = nodoEliminarCuadrado.parentNode;
 
-            //desde el padre remuevo el cuadrado que quiero
-            var papelera = padre.removeChild(nodoEliminarCuadrado);
+            nodoEliminarCuadrado.classList.add("eliminar");
 
 
-
-            //hago el foco en el div que quiero eliminarCuadrado con la clase X=cuadrado1-2-3-4
-            var nodoEliminarBoton = document.getElementById(eliminarBoton);
+            /*//hago el foco en el div que quiero eliminarCuadrado con la clase X=cuadrado1-2-3-4
+            var nodoEliminarBoton = document.getElementById(eliminarBoton);*/
 
             //obtengo el padre
-            var padre2 = nodoEliminarBoton.parentNode;
+            var padre2 = eliminarBoton.parentNode;
 
 
-            var papeleta2 = padre2.removeChild(nodoEliminarBoton);
+            var papeleta2 = padre2.removeChild(eliminarBoton);
 
 
 
@@ -103,44 +111,59 @@
 
         function dobleClic(cuadrao){
 
-            var cambio = document.getElementById(cuadrao);
-            cambio.className="transicionCuadrado";
+            cuadrao.classList.add("cambiarCuadrado");
+            
         }        
+
+
     
-    
+        function redondear(cuadrao){
+
+            cuadrao.classList.add("transcionCirculo");
+
+        }
+
+        function desredondear(cuadrao){
+
+            cuadrao.classList.remove("transcionCirculo");
+
+        }
+
+
         </script>
     
     <article>
      
             <!--ondblclick="esto es doble ckicl"-->
 
-            <div class="cuadrado1" id="eliminarCuadrado" ondblclick="dobleClic('eliminarCuadrado')">
-                <p>1</p>
+        
+            <div class="cuadrado1" id="eliminarCuadrado1" onmouseover="redondear(this)" onmouseout="desredondear(this)" ondblclick="dobleClic(this)">
+          
             </div>
 
-            <div class="cuadrado2" id="eliminarCuadrado2" ondblclick="dobleClic('eliminarCuadrado2')">
-                <p>2</p>
+            <div class="cuadrado2" id="eliminarCuadrado2" onmouseover="redondear(this)" onmouseout="desredondear(this)"  ondblclick="dobleClic(this)">
+            
             </div>
 
-            <div class="cuadrado3" id="eliminarCuadrado3" ondblclick="dobleClic('eliminarCuadrado3')">
-                <p>3</p>
+            <div class="cuadrado3" id="eliminarCuadrado3" onmouseover="redondear(this)" onmouseout="desredondear(this)"  ondblclick="dobleClic(this)">
+            
             </div>
 
-            <div class="cuadrado4" id="eliminarCuadrado4" ondblclick="dobleClic('eliminarCuadrado4')">
-                <p>4</p>
+            <div class="cuadrado4" id="eliminarCuadrado4" onmouseover="redondear(this)" onmouseout="desredondear(this)"  ondblclick="dobleClic(this)">
+            
             </div>
 
 
     </article>
 
     <footer>
-        <button class="boton" id="eliminarBoton1" onclick="EliminarCuadrado('eliminarCuadrado','eliminarBoton1')">Eliminar</button>
+        <button class="boton" onclick="EliminarCuadrado('eliminarCuadrado1',this)">Eliminar</button>
 
-        <button class="boton" id="eliminarBoton2" onclick="EliminarCuadrado('eliminarCuadrado2','eliminarBoton2')">Eliminar</button>
+        <button class="boton" onclick="EliminarCuadrado('eliminarCuadrado2',this)">Eliminar</button>
 
-        <button class="boton" id="eliminarBoton3" onclick="EliminarCuadrado('eliminarCuadrado3','eliminarBoton3')">Eliminar</button>
+        <button class="boton" onclick="EliminarCuadrado('eliminarCuadrado3',this)">Eliminar</button>
 
-        <button class="boton" id="eliminarBoton4" onclick="EliminarCuadrado('eliminarCuadrado4','eliminarBoton4')">Eliminar</button>
+        <button class="boton" onclick="EliminarCuadrado('eliminarCuadrado4',this)">Eliminar</button>
         
     </footer>
 
