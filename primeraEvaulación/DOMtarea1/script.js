@@ -1,10 +1,9 @@
         function EliminarCuadrado(eliminarCuadrado,eliminarBoton){
     
 
- 
+            
             //obtengo el padre
             var padre2 = eliminarBoton.parentNode;
-
 
             var papeleta2 = padre2.removeChild(eliminarBoton);
 
