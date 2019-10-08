@@ -3,153 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title> 
-    
-   <style>
-   article{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 10px;
-
-   }
-   div{
-       display: flex;
-       width: 23.6%;
-       height: 240px;
-       justify-content: center;
-       align-items: center;
-       margin: 4px;
-       box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-       transition: 1s;
-       
-   }
-
-   footer{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-
-   }
-   
-   .cuadrado1{
-    background-color: red;
-
-
-   }
-    
-   .cuadrado2{
-       background-color: blue;
-   }
-
-   .cuadrado3{
-       background-color: green;
-   }
-   
-   .cuadrado4{
-       background-color: black;
-   }
-
-   button{
-       margin: 18px;
-   }
-
-   .cambiarCuadrado{
-    border-radius: 100%;
-    box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.75);
-    transition: 1s;
-
-/*
-    margin-left:-385px;
-    -webkit-transition: 1s;
-    transition: 1s;*/
-
-   }
-
-   .transcionCirculo{
-    border-radius: 50%;
-    transition: 1s;
-   }
-
-   .eliminar{
-       width: 0px;
-       transition: 1s;
-   }
-
-   </style>
+    <style>
+        @import url("Cuadrados.css");
+    </style>
 </head>
 <body>
     </article>
     
     
-        <script>
-    
-    
-        function EliminarCuadrado(eliminarCuadrado,eliminarBoton){
-    
-           
-            //hago el foco en el div que quiero eliminarCuadrado con la clase X=cuadrado1-2-3-4
-            var nodoEliminarCuadrado = document.getElementById(eliminarCuadrado);
-
-            //obtengo el padre
-            var padre = nodoEliminarCuadrado.parentNode;
-
-            nodoEliminarCuadrado.classList.add("eliminar");
-
-
-            /*//hago el foco en el div que quiero eliminarCuadrado con la clase X=cuadrado1-2-3-4
-            var nodoEliminarBoton = document.getElementById(eliminarBoton);*/
-
-            //obtengo el padre
-            var padre2 = eliminarBoton.parentNode;
-
-
-            var papeleta2 = padre2.removeChild(eliminarBoton);
-
-
-
-        }
-
-        function dobleClic(cuadrao){
-
-            cuadrao.classList.add("cambiarCuadrado");
-            
-        }        
-
-
-    
-        function redondear(cuadrao){
-
-            cuadrao.classList.add("transcionCirculo");
-
-        }
-
-        function desredondear(cuadrao){
-
-            cuadrao.classList.remove("transcionCirculo");
-
-        }
-
-
-        </script>
     
     <article>
      
             <!--ondblclick="esto es doble ckicl"-->
 
         
-            <div class="cuadrado1" id="eliminarCuadrado1" onmouseover="redondear(this)" onmouseout="desredondear(this)" ondblclick="dobleClic(this)">
+            <div class="cuadrado1" id="eliminarCuadrado1" onmousedown="pulsar(this)" onmouseup="despulsar(this)" onmouseover="redondear(this)" onmouseout="desredondear(this)" ondblclick="dobleClic(this)">
           
             </div>
 
-            <div class="cuadrado2" id="eliminarCuadrado2" onmouseover="redondear(this)" onmouseout="desredondear(this)"  ondblclick="dobleClic(this)">
+            <div class="cuadrado2" id="eliminarCuadrado2" onmousedown="pulsar(this)" onmouseup="despulsar(this)" onmouseover="redondear(this)" onmouseout="desredondear(this)"  ondblclick="dobleClic(this)">
             
             </div>
 
-            <div class="cuadrado3" id="eliminarCuadrado3" onmouseover="redondear(this)" onmouseout="desredondear(this)"  ondblclick="dobleClic(this)">
+            <div class="cuadrado3" id="eliminarCuadrado3" onmousedown="pulsar(this)" onmouseup="despulsar(this)" onmouseover="redondear(this)" onmouseout="desredondear(this)"  ondblclick="dobleClic(this)">
             
             </div>
 
-            <div class="cuadrado4" id="eliminarCuadrado4" onmouseover="redondear(this)" onmouseout="desredondear(this)"  ondblclick="dobleClic(this)">
+            <div class="cuadrado4" id="eliminarCuadrado4" onmousedown="pulsar(this)" onmouseup="despulsar(this)" onmouseover="redondear(this)" onmouseout="desredondear(this)"  ondblclick="dobleClic(this)">
             
             </div>
 
@@ -166,7 +46,8 @@
         <button class="boton" onclick="EliminarCuadrado('eliminarCuadrado4',this)">Eliminar</button>
         
     </footer>
+    <!--importarjs-->
+    <script src="script.js"></script>
 
-    
 </body>
 </html>
