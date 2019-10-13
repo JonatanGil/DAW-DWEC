@@ -58,3 +58,7 @@
 .infDer {
     border-bottom-right-radius: 10px; 
 }
+
+.HacerSombra{
+    box-shadow: inset 1px -1px 11px 14px rgba(12, 7, 7, 0.75) !important;
+}
