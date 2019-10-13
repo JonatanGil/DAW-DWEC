@@ -32,7 +32,6 @@ window.onload = function(){
         /*
         alert(event.key);
         alert(keyCode.key);*/
-        alert(keyCode);
 
         //numeros extaños del teclado de arriba que lso numeros
         //del 1 al 9 son los mismo en todas las partes del taclado
