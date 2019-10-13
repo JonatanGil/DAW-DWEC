@@ -1,0 +1,80 @@
+
+   article{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            padding: 10px;
+
+   }
+   div{
+       display: flex;
+       width: 22%;
+       height: 240px;
+       justify-content: start;
+       align-items: center;
+       margin: 15px;
+       box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+       transition: 1s;
+       
+   }
+
+   footer{
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+
+   }
+
+   footer button{
+    width: 21.5%;
+   }
+   
+   .cuadrado1{
+    background-color: red;
+
+
+   }
+    
+   .cuadrado2{
+       background-color: blue;
+   }
+
+   .cuadrado3{
+       background-color: green;
+   }
+   
+   .cuadrado4{
+       background-color: black;
+   }
+
+   button{
+       margin: 18px;
+   }
+
+   .cambiarCuadrado{
+    border-radius: 100%;
+    box-shadow: inset 10px 10px 5px 0px rgba(107, 98, 98, 0.75) !important;
+    transition: 1s;
+
+/*
+    margin-left:-385px;
+    -webkit-transition: 1s;
+    transition: 1s;*/
+
+   }
+
+   .transcionCirculo{
+    border-radius: 50%;
+    transition: 1s;
+   }
+
+   .eliminar{
+       width: 0px;
+       transition: 1s;
+   }
+
+   .QuitarSombra{
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        transition: 1s;
+   }
