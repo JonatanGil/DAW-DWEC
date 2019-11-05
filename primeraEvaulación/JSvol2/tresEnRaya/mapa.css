@@ -1,0 +1,32 @@
+content{
+    background-color: aquamarine;
+    background-size:cover;
+    display: grid;
+    grid-template-columns: repeat(3,150px);
+    grid-template-rows: repeat(3,150px);
+    align-items: center;
+    justify-content: center;
+    
+
+}
+div{
+    height: 50%;
+    width: 50%;
+    background-color: grey;
+    background-color: cover;
+    
+
+}
+
+.fichaJugador{
+    background-image: url(img/x.png);
+    background-size: 90% 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.fichaIA{
+    background-image: url(img/o.png);
+    background-size: 90% 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
