@@ -7,13 +7,13 @@ window.onload = function() {
         tecla.innerText = String.fromCharCode(teclaActual);
         tecla.classList.add("tecla");
         teclado.appendChild(tecla);
-        tecla.addEventListener('click',LetraPulsada);
+        tecla.addEventListener('click',tipoLetra);
         
  
     }
 
     //adevenlistener para todo el teclado faltaria poner margen para abcedario solo
-    window.addEventListener('keydown',LetraPulsadaTeclado);
+    window.addEventListener('keydown',tipoLetra);
 
     peliculaRandom();
     monigote();
@@ -43,11 +43,12 @@ function puntuacion(letraParaPuntos){
     var resultado = puntosActuales+sumar;
     
     //añadimos los 0 a la derecha
-    for (let j = 0; j < resultado; j++) {
-        resultado = 0+resultado;
+    for (let j = resultado.length; j < 8; j++) {
+        resultado = "0"+resultado;
 
         
     }
+    
     puntos.innerText=resultado;
     console.log(resultado);
 
@@ -68,7 +69,6 @@ function ganador(){
     for (let k = 0; k < peliculaActual.length; k++) {
         
         for (let p = 0; p < abc.length; p++) {
-            console.log(abc[p]);
             if(peliculaActual[k]==abc[p]){
                 ganar = true;
                 p==100;
@@ -156,73 +156,20 @@ function peliculaRandom(){
 
 }
 
-
-
-function LetraPulsadaTeclado(ev){
-
-    var letra = ev.key;
-    letra = letra.toLowerCase();
+function tipoLetra(ev){
     console.log(ev);
-    /**ULTIMA LETRA PULSDASA*/
-
-    //obtengo con el id la letra que e pulsado para indicar la ultima
-    var ultimaLetra = document.getElementById('ultimaLetra');
-    //le añado el class con el font score
-    ultimaLetra.classList.add('ultimaLetra');
-
-    //si esta vacio pues pongo una letra solo si no la quito con sub -1 y añado la nueva xD
-    if(ultimaLetra==null){
-        ultimaLetra.innerText = letra;
+    if(ev.key){
+        LetraPulsada(ev.key);
     }else{
-        ultimaLetra.innerText=ultimaLetra.innerHTML.substring(0,ultimaLetra.innerHTML.length-1) +letra;
+        LetraPulsada(this.innerText);
     }
-
-
-
-        /* LAS LETRAS PULSADAS PARA MOSTRAR SIN REPETICION*/
-    try {
-        /*si esta vacio da error*/
-        var letrasUsadas = document.getElementById("letrasUsadasLista");
-    } catch (error) {
-    }
-
-    //si no tiene array la letra es que no la a utilizado la añadimos
-    if(!abc.includes(letra)){
-
-        //creo div
-        var letrita = document.createElement("div");
-        //metemos la clase css
-        letrita.classList.add("letraUsada");
-        //le metemos la clase letra para obtener despues el div para parpadeo de color
-        letrita.classList.add(letra);
-        //lo e intentado con value pero no se obtener el div por le value
-        letrita.value=letra;
-        //metemos la letra
-        letrita.innerText=letra;
-        //metemos el div creado en el div de letras usadas
-        letrasUsadas.appendChild(letrita);
-
-        abc.push(letra);
-    }else{
-        //obtenemos el div apartir de la clase letra
-        /*var a = document.getElementsByClassName(letra);
-        console.log(a);*/
-        /*
-        a.addEventListener('transitionend', function(){
-            a.classList.toggle("letraParpadeo");});
-
-*/
-    }
-
-    puntuacion(letra);
 }
 
 function LetraPulsada(ev){
 
-    console.log(this.innerText);
-    console.log(this);
+    console.log(ev);
 
-    var letra = this.innerText;
+    var letra = ev;
     letra = letra.toLowerCase();
 
     /**ULTIMA LETRA PULSDASA*/
