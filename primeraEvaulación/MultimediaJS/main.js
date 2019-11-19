@@ -1,10 +1,22 @@
+window.onload = init();
 
-window.onload=inint();
+function init(){
+    
+    const videoMain = document.querySelectorAll("video");
+    
+    videoMain.forEach(b => {b.addEventListener('click', cambiarVideoMain);});
 
-function inint(){
-    
-    var videoSion = document.getElementById("video");
-    
-    
+    console.log(videoMain);
+}
+
+
+
+
+
+function cambiarVideoMain(a){
+
+    var videoActual = document.querySelector("videoActual");
+    console.log(videoActual);
+
 
 }
