@@ -18,10 +18,28 @@ video{
     border:1px solid black;
 }
 panel{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+    width: 95%;
 }
-#videoActual{
+img{
     width: 100%;
     height: 100%;
+    object-fit: contain;
+}
+button{
+    border:1px solid black;
+    background:rgba(13, 117, 100, 0.6);
+    width: 55%;
+    height: 70%;
+    margin-top: -250px;
+}
+#videoActual{
+    width: 95%;
+    height: 95%;
 
 }
 content{
