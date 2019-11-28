@@ -1,5 +1,7 @@
 window.onload = init;
 
+var anuncioISON = true;
+
 function init(){
     
     const videos = document.querySelectorAll("video");
@@ -39,7 +41,8 @@ async function anuncioSpam(){
    cerrarAnuncio.addEventListener("click", function(){
         var a = document.querySelector("content");  
         a.removeChild(anuncio);
-        a.removeChild(cerrarAnuncio);
+        anuncioISON=false;
+        console.log(anuncioISON);
     }, false); 
 
     videoActual.appendChild(anuncio);
@@ -71,7 +74,13 @@ async function anuncioSpam(){
 
 
 var imagenMuted=true;
+
 function iniciarFunciones(event){
+
+
+    if(anuncioISON){
+        return false;
+    }
 
     var video = document.getElementById("videoActual");
 
@@ -163,9 +172,11 @@ function reset(videomain){
 
 function cambiarVideoMain(i){
 
-console.log(this.id);
+    if(anuncioISON){
+        return false;
+    }
 
-    if(this.id!="videoActual"){
+    if(this.id!=="videoActual"){
 
         var videoNuevo = this.getAttribute("src");
         var videoViejo = document.getElementById("videoActual").getAttribute("src");
@@ -182,9 +193,12 @@ console.log(this.id);
         document.getElementById("videoActual").setAttribute("poster", postNuevo);
         this.setAttribute("poster",postViejo);
 
+    }else{
+        return false;
     }
     
 
 
+    anuncioISON=true;
     anuncioSpam();
 }
