@@ -8,7 +8,25 @@
 </head>
 <body>
 
-    <p>registro.php</p>
+    <?php
+        $servidor = "localhost";
+        $username = "cliente";
+        $password = "cliente";
+        $basedatos = "formulario";
+    
+
+        # Crear conexión
+        $conn = mysqli_connect($servidor, $username, $password, $basedatos);
+    
+        if (!$conn) {
+            die("Conexi&ocacuten fallida: " . mysqli_connect_error());
+        }
+        echo "Conexi&oacuten con &eacutexito <br><br>";
+
+    ?>
+    
+    <p>registro.php</p>    
+
 
 
 </body>
