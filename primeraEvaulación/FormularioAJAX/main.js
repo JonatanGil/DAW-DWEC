@@ -13,7 +13,7 @@ var contraReal;
     var nombreOk = document.valor.String.value;
     if(ctype_alpha (nombre)){
 
-    var expresionRegular= /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+    var expresionRegular= /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]* )+$/;
 
     if(expresionRegular.test (nombre.value) == true){errores[0]="Correcto"; }else{
       errores[0]="El nombre es incorrecto";
