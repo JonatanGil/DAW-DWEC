@@ -9,16 +9,42 @@ cambiar grid a 1 fr jajaa
   @media screen and (min-width: 440px) {
    
 
+    body{
+        background-image: url(../img/campo.jpg);  
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #header{
+        color:white
+    }
+
+
+    input[type="text"]{
+        background-color: rgb(22, 98, 22);
+        margin-left: 15%;
+        border:0px;
+        color:white;
+        border:2px solid black;
+        padding: 2px;
+    }
+    input[type="button"]{
+        background-color: rgb(22, 98, 22);
+        color:white;
+        border:8px solid black;
+        padding: 9px;
+    }
 
     #campo{
         width: 900px;
         height: 500px;
         display: grid;
-        background-color: gray;
+        background-color: rgba(82, 73, 73,0.5);
         grid-template-areas: "jugadores equipos";
         grid-gap: 30px;
         margin-top:100px;
         margin-left:calc(50% - 450px);
+
     }
 
 
@@ -28,7 +54,7 @@ cambiar grid a 1 fr jajaa
         grid-template-columns: repeat(3,1fr);
         margin: 20px;
         justify-items: center;
-        background-color: orange;
+        background-color: rgba(251, 26, 26, 0.5);
     }
 
     
@@ -40,7 +66,7 @@ cambiar grid a 1 fr jajaa
         margin: 20px;
         justify-items: center;
         margin: 20px;
-        background-color: gold;
+        background-color: rgba(44, 92, 206, 0.5);
     }
 
     .jugador{
@@ -58,6 +84,22 @@ cambiar grid a 1 fr jajaa
         background-image: url(../img/índice.png);
         background-size: contain;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -144,6 +186,5 @@ cambiar grid a 1 fr jajaa
         background-color: black;
         color:white;
     }
-    
 
   }

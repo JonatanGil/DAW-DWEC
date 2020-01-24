@@ -8,6 +8,11 @@ function init() {
   crearJugadores();
   crearEquipos();
 
+  var jugadores = document.getElementById("jugadores");
+  
+  jugadores.addEventListener("drop",drop);
+  jugadores.addEventListener("dragover",allowDrop);
+
 
 }
 
@@ -28,22 +33,6 @@ function init() {
 
 */
 
-function crearJugadores(){
-
-  var divJugadores =  document.getElementById("jugadores");
-  console.log(divJugadores);
-  
-  var jugador = document.createElement("img");
-  jugador.id="jugador1";
-  jugador.src='./img/índice.png';
-  jugador.classList.add("jugador");
-  jugador.draggable=true;
-  jugador.addEventListener("ondragstart",drag);
-  divJugadores.appendChild(jugador);
-
-
-}
-
 function crearEquipos(){
 
   var divEquipos =  document.getElementById("equipos");
@@ -52,13 +41,45 @@ function crearEquipos(){
   equipo.id="equipo1";
   equipo.classList.add("equipo");
 
-  equipo.addEventListener("ondrop",drop);
+  equipo.addEventListener("drop",drop);
   
-  equipo.addEventListener("ondragover",allowDrop);
+  equipo.addEventListener("dragover",allowDrop);
 
   divEquipos.appendChild(equipo);
 }
 
+
+function crearJugadores(){
+
+  var divJugadores =  document.getElementById("jugadores");
+  console.log(divJugadores);
+
+  fetch('consulta.php', {
+    method : 'post',
+    //mode:    'cors',
+    headers: {
+      'Content-Type': 'application/json',  // sent request
+      'Accept':       'application/json'   // expected data sent back
+    },
+    body: JSON.stringify({})
+  })
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error))
+
+
+
+  var jugador = document.createElement("h1");
+  jugador.id="jugador1";
+  //jugador.src='./img/índice.png';
+  jugador.innerHTML="O";
+  jugador.classList.add("jugador");
+  jugador.draggable=true;
+  jugador.addEventListener("dragstart",drag);
+  divJugadores.appendChild(jugador);
+
+
+}
 
 
 function allowDrop(ev) {
