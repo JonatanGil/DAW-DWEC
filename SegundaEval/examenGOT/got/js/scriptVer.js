@@ -3,14 +3,14 @@ window.onload = init;
 function init() {
 
     jsonGOT = obtenerJson();
-    console.log(jsonGOT);
+    console.log(jsonGOT+"asa");
 
 }
 
 
 function obtenerJson() {
 
-    var requestURL = 'http://localhost:8080/DAW-DWEC/SegundaEval/examenGOT/got/got.json';
+    var requestURL = './got.json';
 
     var request = new XMLHttpRequest();
 
