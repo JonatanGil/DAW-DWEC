@@ -9,9 +9,9 @@ function init() {
   crearEquipos();
 
   var jugadores = document.getElementById("jugadores");
-  
-  jugadores.addEventListener("drop",drop);
-  jugadores.addEventListener("dragover",allowDrop);
+
+  jugadores.addEventListener("drop", drop);
+  jugadores.addEventListener("dragover", allowDrop);
 
 
 }
@@ -33,49 +33,49 @@ function init() {
 
 */
 
-function crearEquipos(){
+function crearEquipos() {
 
-  var divEquipos =  document.getElementById("equipos");
+  var divEquipos = document.getElementById("equipos");
 
   var equipo = document.createElement("div");
-  equipo.id="equipo1";
+  equipo.id = "equipo1";
   equipo.classList.add("equipo");
 
-  equipo.addEventListener("drop",drop);
-  
-  equipo.addEventListener("dragover",allowDrop);
+  equipo.addEventListener("drop", drop);
+
+  equipo.addEventListener("dragover", allowDrop);
 
   divEquipos.appendChild(equipo);
 }
 
 
-function crearJugadores(){
+function crearJugadores() {
 
-  var divJugadores =  document.getElementById("jugadores");
+  var divJugadores = document.getElementById("jugadores");
   console.log(divJugadores);
 
-  fetch('consulta.php', {
-    method : 'post',
-    //mode:    'cors',
-    headers: {
-      'Content-Type': 'application/json',  // sent request
-      'Accept':       'application/json'   // expected data sent back
-    },
-    body: JSON.stringify({})
-  })
-  .then((res) => res.json())
-  .then((data) => console.log(data))
-  .catch((error) => console.log(error))
+  fetch("../PHP/consulta.php")
+        .then(function (res) {
+            if (res.status >= 200 && res.status < 300) {
+                return res.json();
+            }
+        }).then(resjson => {
+            console.log(resjson);
+        }).catch(function (err) {
+        });
+
+
+
 
 
 
   var jugador = document.createElement("h1");
-  jugador.id="jugador1";
+  jugador.id = "jugador1";
   //jugador.src='./img/índice.png';
-  jugador.innerHTML="O";
+  jugador.innerHTML = "O";
   jugador.classList.add("jugador");
-  jugador.draggable=true;
-  jugador.addEventListener("dragstart",drag);
+  jugador.draggable = true;
+  jugador.addEventListener("dragstart", drag);
   divJugadores.appendChild(jugador);
 
 
