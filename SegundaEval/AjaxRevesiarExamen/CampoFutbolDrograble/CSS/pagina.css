@@ -16,23 +16,33 @@ cambiar grid a 1 fr jajaa
     }
 
     #header{
-        color:white
+        color:white;
     }
 
+    img{
+        width: 50px;
+        height: 50px;
+    }
 
     input[type="text"]{
+        float: left;
+        margin-top: 10px;
         background-color: rgb(22, 98, 22);
-        margin-left: 15%;
         border:0px;
         color:white;
         border:2px solid black;
         padding: 2px;
     }
+
+
     input[type="button"]{
+        float: left;
         background-color: rgb(22, 98, 22);
         color:white;
         border:8px solid black;
         padding: 9px;
+        widows: 40px;
+        margin-right: 40px;
     }
 
     #campo{
@@ -80,9 +90,7 @@ cambiar grid a 1 fr jajaa
         width: 50px;
         height: 50px;
         margin-top: 20px;
-        border:1px solid red;
-        background-image: url(../img/índice.png);
-        background-size: contain;
+        border:1px solid yellow;
     }
 
 
